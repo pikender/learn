@@ -1,0 +1,4 @@
+learn
+=====
+
+Raw thoughts
