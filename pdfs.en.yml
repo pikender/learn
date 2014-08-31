@@ -1,0 +1,7 @@
+en:
+  pdfs:
+    order_invoice: 
+      title: "Is it Working. Wow"
+      body_text1: 'Body'
+      body_text2: 'Body1'
+      state_aid: 'StateBody'
