@@ -11,12 +11,15 @@ To enter the familiar domain, rails-erd is a tool on top of ruby wrapper
 of graphviz (ruby-graphviz)
 
 state_machine gives you a rake task to publish state machine image using
-graphviz `rake state_machine:draw FILE=vehicle.rb CLASS=Vehicle`
+graphviz `FONT=ArialMT rake state_machine:draw FILE=vehicle.rb CLASS=Vehicle`
+- might need to add `gem ruby-graphviz`
 
 just came across a beautiful use of showing gem dependencies using
 bundler `bundle viz`
 
-`RAILS_ENV=production ruby bin/single_model.rb`
+**All Models** => `RAILS_ENV=production ruby bin/single_model.rb`
+**SINGLE Model** => `RAILS_ENV=production Class=Order ruby bin/single_model.rb`
+- production env as otherwise all models wont be eager-loaded :)
 
 ```ruby
 require File.dirname(File.expand_path(File.dirname(__FILE__))) +
