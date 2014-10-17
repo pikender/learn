@@ -70,7 +70,7 @@ to Redeem Class
 ## Initial Initialization of classes
 
 Creating Class Objects
-```
+```js
 var redeemCoupon = new RedeemCoupon();
 var redeemHelper = new RedeemHelper(redeemCoupon, singleRedeemUrl, accessKey, secretKey);
 redeemCoupon.init(redeemHelper);
@@ -81,7 +81,7 @@ multiRedeemCoupon.init(multiRedeemHelper);
 ```
 
 RedeemHelper
-```
+```js
 var RedeemHelper = function(baseObj, singleRedeemUrl, accessKey, secretKey) {
   this.baseObj = baseObj;
   this.singleRedeemUrl = singleRedeemUrl;
@@ -91,7 +91,7 @@ var RedeemHelper = function(baseObj, singleRedeemUrl, accessKey, secretKey) {
 ```
 
 Redeem
-```
+```js
 var RedeemCoupon = function() {
   this.messagesWrapper = $('#single-coupon-redeem-results');
   this.infoPlaceholder = $('#single-coupon-info-placeholder');
@@ -111,7 +111,7 @@ RedeemCoupon.prototype.init = function(redeemHelper) {
 
 ## Final Initialization
 
-```
+```js
 -      var redeemCoupon = new RedeemCoupon();
 -      var redeemHelper = new RedeemHelper(redeemCoupon, singleRedeemUrl, accessKey, secretKey);
 -      redeemCoupon.init(redeemHelper);
@@ -135,13 +135,13 @@ RedeemCoupon.prototype.init = function(redeemHelper) {
 ```
 
 Update Coupon View Class
-```
+```js
 var CouponViewBase = function() {
 }
 ```
 
 RedeemHelper
-```
+```js
 var RedeemHelper = function(singleRedeemUrl, accessKey, secretKey) {
   this.singleRedeemUrl = singleRedeemUrl;
   this.accessKey = accessKey;
@@ -151,7 +151,7 @@ var RedeemHelper = function(singleRedeemUrl, accessKey, secretKey) {
 ```
 
 Redeem
-```
+```js
 var RedeemCoupon = function(redeemHelper) {
   this.messagesWrapper = $('#single-coupon-redeem-results');
   this.infoPlaceholder = $('#single-coupon-info-placeholder');
