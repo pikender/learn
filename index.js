@@ -33,7 +33,7 @@ const resolvers = {
     duration: 180,
     watched: true
   }),
-  videos: () => [videoA, videoB]
+  videos: () => videos
 };
 
 const videoA = {
@@ -50,21 +50,12 @@ const videoB = {
   watched: true
 }
 
-const query = `
-  query myFirstQuery {
-    videos {
-      id
-      title
-      duration
-      watched
-    }
-  }
-`;
-
+const videos = [videoA, videoB];
 
 server.use('/graphql', graphqlHTTP({
   schema,
-  graphiql: true
+  graphiql: true,
+  rootValue: resolvers
 }));
 
 server.listen(PORT, () => {
