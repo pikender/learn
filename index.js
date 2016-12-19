@@ -9,7 +9,8 @@ const {
   GraphQLID,
   GraphQLString,
   GraphQLInt,
-  GraphQLBoolean
+  GraphQLBoolean,
+  GraphQLNonNull
 } = require('graphql');
 
 const { getVideobyID } = require('./src/data');
@@ -48,7 +49,7 @@ const queryType = new GraphQLObjectType({
       type: videoType,
       args: {
         id: {
-          type: GraphQLID,
+          type: new GraphQLNonNull(GraphQLID),
           description: 'The id of the video'
         }
       },
