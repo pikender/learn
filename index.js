@@ -21,6 +21,8 @@ const {
   createVideo
 } = require('./src/data');
 
+const nodeInterface = require('./src/node');
+
 const PORT = process.env.PORT || 5000;
 const server = express();
 
@@ -29,7 +31,8 @@ const videoType = new GraphQLObjectType({
   description: 'A video on Egghead',
   fields: {
     id: {
-      type: GraphQLID,
+      // Match the interface
+      type: new GraphQLNonNull(GraphQLID),
       description: 'The id of the video'
     },
     title: {
@@ -44,8 +47,11 @@ const videoType = new GraphQLObjectType({
       type: GraphQLBoolean,
       description: 'Whether the video is watched or not ?'
     }
-  }
+  },
+  interfaces: [nodeInterface]
 });
+
+exports.videoType = videoType;
 
 const queryType = new GraphQLObjectType({
   name: 'QueryType',
